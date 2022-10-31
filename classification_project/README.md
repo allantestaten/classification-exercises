@@ -4,7 +4,7 @@
 Telco has seen remarkable success over the last couple of years and has recently seen profits plateau. In this project I will review the features of the dataset to identify which features that may be contributing to customer's churning at Telco. 
  
 # Project Goal
- 
+
 * Identify which features are driving customers to churn. 
 * Develop and use machine learning model that accurately predicts customer churn.
 * Deliver a report that explains what steps were taken and why there were taken.
@@ -56,9 +56,13 @@ Customer churn is more likely to occur based on the services they recieve and co
 
 # Steps to Reproduce
 1) Clone this repo
-2) Acquire the data from mySQL workbench database using env file with proper credentials
-3) Put the data in the file containing the cloned repo
-4) Run notebook
+2) Acquire the data from mySQL workbench database 
+3) Create env file with username, password and codeup host name 
+4) Include the function below in your env file
+def get_db_url(db, user = username, host = host, password = password):
+    return f'mysql+pymysql://{user}:{password}@{host}/{db}'
+5) Put the data in the file containing the cloned repo
+6) Run notebook
  
 # Takeaways and Conclusions
 * 26% of customers churn 
