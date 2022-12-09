@@ -76,7 +76,6 @@ def get_db_url(db, user = username, host = host, password = password):
 
  
 # Recommendations
-* Recommendations are actions the stakeholder should take based on your insights
 * Gather qualitative and quantitative data from customer's about the performance of the fiber optic internet 
 * Solicit for quantitative and qualitative data on why customer's select month to month contracts 
 * Review incentives offered for each contract type. 
