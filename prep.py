@@ -25,10 +25,10 @@ def clean_iris(df):
     df = df.rename(columns={'species_name':'species'})
     
     # create dummies dataframe using .get_dummies(column_name,not dropping any of the dummy columns)
-    dummy_df = pd.get_dummies(df['species'], drop_first=False)
+    #dummy_df = pd.get_dummies(df['species'], drop_first=False)
     
     # join original df with dummies df using .concat([original_df,dummy_df], join along the index)
-    df = pd.concat([df, dummy_df], axis=1)
+    #df = pd.concat([df, dummy_df], axis=1)
     
     return df
 
@@ -58,10 +58,10 @@ def prep_iris(df):
     df = df.rename(columns={'species_name':'species'})
     
     # create dummies dataframe using .get_dummies(column_name,not dropping any of the dummy columns)
-    dummy_df = pd.get_dummies(df['species'], drop_first=False)
+    #dummy_df = pd.get_dummies(df['species'], drop_first=False)
     
     # join original df with dummies df using .concat([original_df,dummy_df], join along the index)
-    df = pd.concat([df, dummy_df], axis=1)
+    #df = pd.concat([df, dummy_df], axis=1)
     
     # split data into train/validate/test using split_data function
     train, validate, test = split_iris_data(df)
@@ -84,8 +84,8 @@ def clean_titanic_data(df):
     df['embark_town'] = df.embark_town.fillna(value='Southampton')
 
     # Uses one-hot encoding to create dummies of string columns for future modeling 
-    dummy_df = pd.get_dummies(df[['sex', 'embark_town']], dummy_na=False, drop_first=[True])
-    df = pd.concat([df, dummy_df], axis=1)
+    #dummy_df = pd.get_dummies(df[['sex', 'embark_town']], dummy_na=False, drop_first=[True])
+    #df = pd.concat([df, dummy_df], axis=1)
 
     return df
 
@@ -178,19 +178,22 @@ def prep_telco_data(df):
     df['phone_service_encoded'] = df.phone_service.map({'Yes': 1, 'No': 0})
     df['paperless_billing_encoded'] = df.paperless_billing.map({'Yes': 1, 'No': 0})
     df['churn_encoded'] = df.churn.map({'Yes': 1, 'No': 0})
-
-    #defining variable that will be used to replace fips values
-    cleanup_fips = {"fips":{6037: 'Los Angeles CA', 6059:'Orange County CA', 6111: 'Ventura County CA'} }
-   
-    # replacing fips values with county name
-    df = df.replace(cleanup_fips)
-
+    
     # Get dummies for non-binary categorical variables
-    dummy_df = pd.get_dummies(df[['fips']], dummy_na=False, \
-                              drop_first=True)
+    #dummy_df = pd.get_dummies(df[['multiple_lines', \
+                              #'online_security', \
+                              #'online_backup', \
+                              #'device_protection', \
+                              #'tech_support', \
+                              #'streaming_tv', \
+                              #'streaming_movies', \
+                              #'contract_type', \
+                              #'internet_service_type', \
+                              ##'payment_type']], dummy_na=False, \
+                              #drop_first=True)
     
     # Concatenate dummy dataframe to original 
-    df = pd.concat([df, dummy_df], axis=1)
+    #df = pd.concat([df, dummy_df], axis=1)
     
     # split the data
     train, validate, test = split_telco_data(df)

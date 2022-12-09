@@ -1,10 +1,7 @@
-
-
 import pandas as pd
 import numpy as np
 import os
 from env import get_db_url
-
 def new_titanic_data():
     '''
     This function reads the titanic data from the Codeup db into a df.
